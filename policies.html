@@ -57,30 +57,34 @@
       </p>
     </div>
 
-    <h2>Request a Policy Change</h2>
-    <form
-      name="policy-change"
-      method="POST"
-      data-netlify="true"
-      netlify
-      enctype="multipart/form-data"
-      class="policy-form">
-      <input type="hidden" name="form-name" value="policy-change" />
+    <div class="policy-form-container">
+      <h2>Request a Policy Change</h2>
+      <form
+        name="policy-change"
+        method="POST"
+        data-netlify="true"
+        enctype="multipart/form-data"
+        class="policy-form"
+        id="policyChangeForm">
+        <input type="hidden" name="form-name" value="policy-change" />
 
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
 
-      <label for="details">Policy Change Request Details:</label>
-      <textarea id="details" name="details" required></textarea>
+        <label for="details">Policy Change Request Details:</label>
+        <textarea id="details" name="details" required></textarea>
 
-      <label for="file">File (optional):</label>
-      <input type="file" id="file" name="file" />
+        <label for="file">File (optional):</label>
+        <input type="file" id="file" name="file" />
 
-      <button type="submit">Submit Request</button>
-    </form>
+        <button type="submit">Submit Request</button>
+      </form>
+      <p id="formMessage" style="display: none; color: green"></p>
+      <p id="formError" style="display: none; color: red"></p>
+    </div>
 
     <footer>
       <p>&copy; 2024 Stockton Secondary School | All Rights Reserved</p>
@@ -90,7 +94,37 @@
     <br />
     <br />
     <br />
+    <script>
+      document
+        .getElementById("policyChangeForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
 
+          var formData = new FormData(this);
+
+          fetch("/", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => {
+              if (response.ok) {
+                document.getElementById("formMessage").innerText =
+                  "Your request has been submitted successfully.";
+                document.getElementById("formMessage").style.display = "block";
+                document.getElementById("formError").style.display = "none";
+                this.reset(); // Reset the form fields
+              } else {
+                throw new Error("Form submission failed.");
+              }
+            })
+            .catch((error) => {
+              document.getElementById("formError").innerText =
+                "There was a problem with your submission. Please try again.";
+              document.getElementById("formError").style.display = "block";
+              document.getElementById("formMessage").style.display = "none";
+            });
+        });
+    </script>
     <script src="menu.js"></script>
   </body>
 </html>
