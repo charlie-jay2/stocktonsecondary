@@ -166,59 +166,90 @@ table tr:hover td {
 }
 
 .events-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .events-box {
-    width: 80%;
-    max-width: 600px; /* Adjust width as needed */
-    height: 300px; /* Adjust height as needed */
-    overflow: hidden;
-    border: 1px solid #ccc;
-  }
-  
-  #events-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  #events-table th, #events-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  #events-table th {
-    background-color: #54794c;
-    color: white;
-  }
-  
-  #events-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  #events-table tr:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .scroll-btn {
-    background-color: #54794c;
-    color: white;
-    border: none;
-    cursor: pointer;
-    height: 60px;
-    width: 30px;
-    font-size: 20px;
-    text-align: center;
-    line-height: 30px;
-  }
-  
-  .scroll-btn:first-of-type {
-    border-radius: 5px 0 0 5px;
-  }
-  
-  .scroll-btn:last-of-type {
-    border-radius: 0 5px 5px 0;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.events-box {
+  width: 80%;
+  max-width: 600px; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+#events-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#events-table th,
+#events-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+#events-table th {
+  background-color: #54794c;
+  color: white;
+}
+
+#events-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#events-table tr:hover {
+  background-color: #e0e0e0;
+}
+
+.scroll-btn {
+  background-color: #54794c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  height: 60px;
+  width: 30px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.scroll-btn:first-of-type {
+  border-radius: 5px 0 0 5px;
+}
+
+.scroll-btn:last-of-type {
+  border-radius: 0 5px 5px 0;
+}
+
+.container {
+  margin: 20px;
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.policy-table tr td {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 10px 0;
+  text-align: left;
+}
+
+.policy-table a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.pdf-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
