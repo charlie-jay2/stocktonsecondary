@@ -57,9 +57,39 @@
       </p>
     </div>
 
+    <h2>Request a Policy Change</h2>
+    <form
+      name="policy-change"
+      method="POST"
+      data-netlify="true"
+      netlify
+      enctype="multipart/form-data"
+      class="policy-form">
+      <input type="hidden" name="form-name" value="policy-change" />
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="details">Policy Change Request Details:</label>
+      <textarea id="details" name="details" required></textarea>
+
+      <label for="file">File (optional):</label>
+      <input type="file" id="file" name="file" />
+
+      <button type="submit">Submit Request</button>
+    </form>
+
     <footer>
       <p>&copy; 2024 Stockton Secondary School | All Rights Reserved</p>
     </footer>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
     <script src="menu.js"></script>
   </body>
