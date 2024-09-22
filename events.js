@@ -1,6 +1,6 @@
 // events.js
 const events = [
-    { date: "To Be Confirmed", title: "Open Day", description: "An opportunity for prospective students and their families to tour the school and meet staff." },
+    { date: "27/09/2024", title: "Open Day", description: "An opportunity for prospective students and their families to tour the school and meet staff." },
     // Add more events as needed
 ];
 
